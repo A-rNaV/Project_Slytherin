@@ -20,7 +20,7 @@ COPY ./website/run.py .
 COPY ./website/app ./app
 
 WORKDIR /var/www/internal_router
-COPY ./internal/requirements.txt app/requirements.txt
+COPY ./app/internal/requirements.txt app/requirements.txt
 RUN pip install -r app/requirements.txt
 
 COPY ./app/internal/internal_router.wsgi .
