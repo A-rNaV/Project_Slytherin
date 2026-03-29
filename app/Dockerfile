@@ -23,9 +23,9 @@ WORKDIR /var/www/internal_router
 COPY ./internal/requirements.txt app/requirements.txt
 RUN pip install -r app/requirements.txt
 
-COPY ./internal/internal_router.wsgi .
-COPY ./internal/run.py .
-COPY ./internal/app ./app
+COPY ./app/internal/internal_router.wsgi .
+COPY ./app/internal/run.py .
+COPY ./app/internal/app ./app
 
 ARG FLAG
 RUN echo -n "$FLAG" > /flag
